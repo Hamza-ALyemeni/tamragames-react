@@ -1,6 +1,17 @@
 import '../style.css';
-
+import logo from '/cropped-cropped-tamra-3.png'
+import { useRef } from "react";
 export default function Header() {
+    const mmenu = useRef();
+    const closebtn = useRef();
+
+    function showMobileMenu() {
+        mmenu.current.style.width = "250px";
+    }
+
+    function hideMobileMenu() {
+        mmenu.current.style.width = "0px";
+    }
     return(
         <div className="header">
             <div className="container">
@@ -9,7 +20,7 @@ export default function Header() {
                         <div className="for-language-swap-logo">
                             <div className="logo">
                                 <a href="#">
-                                    <img alt="Tamra Games" src="#"/>
+                                    <img alt="Tamra Games" src={logo}/>
                                 </a>
                             </div>
                         </div>
@@ -46,21 +57,21 @@ export default function Header() {
                             </ul>
                         </div>
                         <div className="mobile_menu">
-                            <span className="icon">☰ </span>
-                            <div id="mySidenav" className="sidenav">
-                                <span className="closebtn">×</span>
+                            <span className="icon" onClick={showMobileMenu}>☰ </span>
+                            <div id="mySidenav" className="sidenav" ref={mmenu} style={{width:"0px"}}>
+                                <span className="closebtn" ref={closebtn} onClick={hideMobileMenu}>×</span>
                                 <ul>
-                                    <li className="{router.pathname == &quot;/&quot; ? &quot;active&quot; : &quot;&quot;}">
-                                         <a href="#">Home</a> 
+                                    <li className="">
+                                        <a href="#">Home</a> 
                                     </li>
-                                    <li className="{router.pathname == &quot;about&quot; ? &quot;active&quot; : &quot;&quot;}">
+                                    <li className="">
                                         <a href="#">About</a> 
                                     </li>
                                     <li> 
                                         <a href="#">Solutions</a> 
                                     </li>
                                     <li> 
-                                        <a href="publishing.html">Publishing</a> 
+                                        <a href="">Publishing</a> 
                                     </li>
                                     <li> 
                                         <a href="#">Brands</a> 
