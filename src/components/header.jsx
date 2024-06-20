@@ -1,7 +1,7 @@
 import '../style.css';
 import logo from '/cropped-cropped-tamra-3.png'
 import { useRef } from "react";
-export default function Header() {
+export default function Header({...props}) {
     const mmenu = useRef();
     const closebtn = useRef();
 
