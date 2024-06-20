@@ -1,4 +1,7 @@
 import '../style.css';
+import WOW from "wowjs";
+import 'animate.css';
+import { useEffect } from 'react';
 import  sultan  from "/sultan.jpeg";
 import  strongDude  from "/strong-dude.jpeg";
 import  girlWithDog  from "/girl-with-a-dog.jpeg";
@@ -11,6 +14,12 @@ import  gameIconFour from "/game-icon-4.jpg";
 import  gameIconFive from "/game-icon-5.jpg";
 
 export default function GamesSection({...props}) {
+    useEffect(() => {
+        new WOW.WOW({
+          live: false
+        }).init();
+      }, []);
+
     return (
         <section className="fullpage">
             <div className="home_section_gamesicon">

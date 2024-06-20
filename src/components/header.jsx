@@ -12,6 +12,7 @@ export default function Header({...props}) {
     function hideMobileMenu() {
         mmenu.current.style.width = "0px";
     }
+    
     return(
         <div className="header">
             <div className="container">
